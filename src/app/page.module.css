@@ -1,0 +1,259 @@
+/* General Page Styles */
+.page {
+    --gray-rgb: 0, 0, 0;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+    --button-primary-hover: #383838;
+    --button-secondary-hover: #f2f2f2;
+    --foreground: #0070f3;
+    --background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px;
+    gap: 48px;
+    font-family: var(--font-geist-sans);
+    background-color: var(--background);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .page {
+        --gray-rgb: 255, 255, 255;
+        --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+        --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+        --button-primary-hover: #ccc;
+        --button-secondary-hover: #1a1a1a;
+        --foreground: #0070f3;
+        --background: #000000;
+    }
+
+    .logo {
+        filter: invert(1);
+    }
+}
+
+/* Logo */
+.logo {
+    font-family: var(--font-geist-mono);
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+    color: var(--background);
+}
+
+/* Main Section */
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+}
+
+/* Instructions */
+.instructions {
+    font-family: var(--font-geist-mono);
+    padding: 0;
+    margin: 0;
+    color: var(--gray-alpha-500);
+    font-size: 14px;
+    line-height: 24px;
+    list-style-position: inside;
+}
+
+.uploadText {
+    font-family: var(--font-geist-mono);
+}
+
+.sizeSelector {
+    font-family: var(--font-geist-mono);
+}
+
+.instructions li:not(:last-of-type) {
+    margin-bottom: 8px;
+}
+
+.instructions code {
+    background: var(--gray-alpha-100);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Buttons */
+.ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.ctaButton {
+    appearance: none;
+    border-radius: 32px;
+    height: 48px;
+    padding: 0 20px;
+    font-family: var(--font-geist-mono);
+    border: 1px solid var(--gray-alpha-200);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    background: transparent;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .page {
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .ctas {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .ctaButton {
+        font-size: 14px;
+        height: 40px;
+    }
+}
+
+/* File Box */
+.fileBox {
+    width: 100%;
+    max-width: 30rem;
+    height: 300px;
+    border: 2px dashed var(--gray-alpha-200);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: var(--gray-alpha-100);
+    gap: 16px;
+    padding: 16px;
+    position: relative; /* Allows better control of child elements */
+}
+
+/* Centering the Upload Input */
+.uploadInput {
+    display: block;
+    font-family: var(--font-geist-mono);
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin: 1px -25px 1px; /* Centers the input */
+    position: relative; /* Ensures it's independent of the fileBox structure */
+    white-space: nowrap; /* Prevents text wrapping for long file names */
+    overflow: hidden; /* Hides overflow for very long file names */
+    text-overflow: ellipsis; /* Truncates long file names with ellipsis */
+}
+
+/* File Preview */
+.filePreview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensures the preview container spans the box width */
+    height: 100%; /* Ensures the preview container spans the box height */
+    position: relative; /* Prevents preview from overlapping */
+    overflow: hidden; /* Ensures the image doesn't spill outside the preview */
+}
+
+.filePreview img {
+    max-height: 80%; /* Ensures the image fits within the box height */
+    max-width: 80%; /* Ensures the image fits within the box width */
+    object-fit: contain; /* Maintains aspect ratio while fitting the box */
+    border-radius: 8px; /* Optional: Adds rounded corners to the image */
+}
+
+/* Adjusting for Long File Names */
+.fileDetails a {
+    display: block;
+    font-size: 16px;
+    margin: 0 auto; /* Centers the file name text */
+    white-space: nowrap; /* Prevents text wrapping */
+    overflow: hidden; /* Hides overflow for long file names */
+    text-overflow: ellipsis; /* Displays ellipsis for long file names */
+    font-family: var(--font-geist-mono);
+    color: var(--foreground);
+    text-decoration: underline;
+}
+
+/* Upload Input */
+.uploadInput {
+    display: block;
+    font-family: var(--font-geist-mono);
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Custom Size Inputs */
+.customSizeInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.customInput {
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid var(--gray-alpha-200);
+}
+
+/* Dropdown Menus */
+.sizeDropdown,
+.formatSelector {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 15px;
+    font-family: var(--font-geist-mono);
+    border: 1px solid var(--gray-alpha-200);
+}
+
+/* Convert Button */
+.convertButton {
+    appearance: none;
+    border-radius: 32px;
+    height: 48px;
+    margin-left: 25%;
+    width: 50%;
+    padding: 0 20px;
+    font-family: var(--font-geist-mono);
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid var(--gray-alpha-200);
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+
+.convertButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
