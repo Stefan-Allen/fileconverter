@@ -64,7 +64,7 @@ const FileConverter = () => {
 
         img.onload = () => {
             const canvas = document.createElement("canvas");
-            let { width, height } = img;
+            let {width, height} = img;
 
             // Use baseName from fileName (the name of the file without its extension)
             const baseName = fileName.substring(0, fileName.lastIndexOf(".")) || fileName;

@@ -25,7 +25,7 @@ export default function Home() {
                         Get started by selecting <code>Converter</code>.
                     </li>
                     <li>
-                        Instantly convert files for <code>free</code> (images, audio, video, archive files).
+                        Instantly convert files for <code>free</code> (images).
                     </li>
 
                 </ol>
