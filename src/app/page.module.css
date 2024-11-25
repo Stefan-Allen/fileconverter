@@ -37,6 +37,43 @@
     }
 }
 
+/* Navbar */
+
+/* Ensure the navbar stays at the top */
+.navbarContainer {
+    position: fixed; /* Keeps the navbar fixed at the top */
+    top: 0; /* Aligns it to the top of the page */
+    left: 25%;
+    width: 50%; /* Makes it span the full width of the page */
+    align-items: center;
+    z-index: 1000; /* Ensures it stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    padding: 10px 20px; /* Adds padding inside the navbar */
+}
+
+
+/* Navigation links container */
+.navLinks {
+    list-style: none; /* Removes default bullet points */
+    display: flex; /* Aligns links horizontally */
+    gap: 24px; /* Adds space between links */
+    margin: 0; /* Removes margin */
+    padding: 0; /* Removes padding */
+}
+
+/* Individual navigation links */
+.navLinks li a {
+    text-decoration: none; /* Removes underline from links */
+    font-size: 1rem; /* Adjusts font size */
+    transition: color 0.3s ease; /* Adds hover effect */
+}
+
+/* Hover effect for links */
+.navLinks li a:hover {
+    color: var(--button-primary-hover);
+}
+
+
 /* Logo */
 .logo {
     font-family: var(--font-geist-mono);

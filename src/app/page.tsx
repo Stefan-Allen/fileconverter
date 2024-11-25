@@ -1,20 +1,12 @@
 import styles from "./page.module.css";
-import Link from "next/link";
+import Navbar from "@/app/components/navbar/page";
+
 
 export default function Home() {
     return (
         <div className={styles.page}>
+            <Navbar/>
             <main className={styles.main}>
-                <div className={styles.ctas}>
-                    <Link
-                        href="/converter/imageconverter"
-                        passHref
-                    >
-                        <div className={styles.ctaButton}>
-                            Image Converter
-                        </div>
-                    </Link>
-                </div>
 
                 <div className={styles.logo}>
                     File Converter

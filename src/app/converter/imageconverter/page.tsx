@@ -1,7 +1,7 @@
 "use client";
 import {ChangeEvent, DragEvent, useState} from "react";
 import styles from "../../page.module.css";
-import Link from "next/link";
+import Navbar from "@/app/components/navbar/page";
 
 interface Dimensions {
     width: number | null;
@@ -228,12 +228,7 @@ const FileConverter = () => {
     return (
         <div className={styles.page}>
             <main className={styles.main}>
-                <div className={styles.ctas}>
-                    <Link href="/" className={styles.ctaButton}>
-                        Home
-                    </Link>
-                </div>
-
+                <Navbar/>
 
                 <div
                     className={styles.fileBox}
