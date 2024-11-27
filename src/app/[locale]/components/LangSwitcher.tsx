@@ -16,9 +16,7 @@ const LangSwitcher: React.FC = () => {
   const urlSegments = useSelectedLayoutSegments()
 
   const [isOptionsExpanded, setIsOptionsExpanded] = useState(false)
-  const options: Option[] = [
-    { country: 'English', code: 'en' } // Native name is the same
-  ]
+  const options: Option[] = [{ country: 'English', code: 'en' }]
 
   return (
     <div className='flex items-center justify-center'>

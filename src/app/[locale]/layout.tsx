@@ -1,4 +1,6 @@
 import { ThemeProvider } from '@/src/app/[locale]/components/ThemeProvider'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 import {
   AbstractIntlMessages,
@@ -23,8 +25,9 @@ const space_grotesk = Space_Grotesk({
   variable: '--font-space-grotesk'
 })
 export const metadata: Metadata = {
-  title: 'Next Temp',
-  description: 'create next app By Yahya Parvar!'
+  title: 'File converter',
+  description:
+    'File Converter is a powerful software that easily converts files between different formats, such as PNG to JPEG. With a simple interface, File Converter ensures quick, high-quality conversions for all your files, whether for web optimization or other applications.'
 }
 
 export default function RootLayout({
@@ -58,6 +61,9 @@ export default function RootLayout({
             'dusk'
           ]}
         >
+          <SpeedInsights />
+          <Analytics />
+
           <NextIntlClientProvider
             locale={locale}
             messages={messages as AbstractIntlMessages}
